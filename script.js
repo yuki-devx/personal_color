@@ -931,7 +931,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="cta-section">
         <p class="cta-message">＼ より詳しいアドバイスが欲しい方へ ／</p>
         <div class="cta-buttons-container">
-            <a class="cta-button line-button" onclick='alert('サンプルです');'>
+            <a id="line-toroku" class="cta-button line-button">
                 <div class="button-inner">
                     <span class="button-icon">📱</span>
                     <div class="button-text-container">
@@ -940,7 +940,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
             </a>
-            <a class="cta-button instagram-button" onclick='alert('サンプルです');'>
+            <a id="insta-ok" class="cta-button instagram-button">
                 <div class="button-inner">
                     <span class="button-icon">📸</span>
                     <div class="button-text-container">
@@ -961,6 +961,10 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
     </div>
 `;
+
+    $('#line-toroku, #insta-ok').on('click', function() {
+      alert('サンプルです');
+    });
 
     // 結果コンテンツを更新
     resultBox.innerHTML = headerHTML + paletteHTML + descriptionHTML;
