@@ -755,12 +755,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         question.options.forEach((option, index) => {
             const button = document.createElement('button');
-            button.className = 'option-button';
-            button.textContent = option.text;
-            button.addEventListener('click', () => {
-                selectAnswer(option.values);
-            });
-            optionsContainer.appendChild(button);
+    button.className = 'option-button';
+    button.textContent = option.text;
+    button.addEventListener('click', () => {
+        // 全ての選択肢のスタイルをリセット
+        document.querySelectorAll('.option-button').forEach(btn => {
+            btn.style.removeProperty('background');
+            btn.style.removeProperty('color');
+        });
+        selectAnswer(option.values);
+    });
+    optionsContainer.appendChild(button);
         });
 
         questionElement.style.opacity = '1';
