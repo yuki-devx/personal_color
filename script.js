@@ -746,6 +746,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const questionElement = document.getElementById('question');
     const optionsContainer = document.querySelector('.options-container');
 
+    // すべての選択肢ボタンから:activeステートを強制的に解除
+    const activeButtons = document.querySelectorAll('.option-button:active');
+    activeButtons.forEach(button => {
+        button.blur();  // フォーカスを解除
+        button.classList.remove('active');  // もし独自のactiveクラスがある場合
+    });
+
     // フェードアウト
     questionElement.style.opacity = '0';
     optionsContainer.style.opacity = '0';
@@ -934,7 +941,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="cta-section">
         <p class="cta-message">＼ より詳しいアドバイスが欲しい方へ ／</p>
         <div class="cta-buttons-container">
-            <a id="line-toroku" class="cta-button line-button">
+            <a href='#' id="line-toroku" class="cta-button line-button">
                 <div class="button-inner">
                     <span class="button-icon">📱</span>
                     <div class="button-text-container">
@@ -943,7 +950,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
             </a>
-            <a id="insta-ok" class="cta-button instagram-button">
+            <a href='#' id="insta-ok" class="cta-button instagram-button">
                 <div class="button-inner">
                     <span class="button-icon">📸</span>
                     <div class="button-text-container">
