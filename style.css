@@ -1150,3 +1150,9 @@ body {
         transition: none;
     }
 }
+
+
+.option-button:active {
+    background-color: var(--primary-color);
+    color: white;
+}
