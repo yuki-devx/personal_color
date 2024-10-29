@@ -931,7 +931,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="cta-section">
         <p class="cta-message">＼ より詳しいアドバイスが欲しい方へ ／</p>
         <div class="cta-buttons-container">
-            <a href="#" class="cta-button line-button" onclick='alert('サンプルです');'>
+            <a class="cta-button line-button" onclick='alert('サンプルです');'>
                 <div class="button-inner">
                     <span class="button-icon">📱</span>
                     <div class="button-text-container">
@@ -940,7 +940,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
             </a>
-            <a href="#" class="cta-button instagram-button" onclick='alert('サンプルです');'>
+            <a class="cta-button instagram-button" onclick='alert('サンプルです');'>
                 <div class="button-inner">
                     <span class="button-icon">📸</span>
                     <div class="button-text-container">
