@@ -962,8 +962,8 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
 `;
 
-    $('#line-toroku, #insta-ok').on('click', function() {
-      alert('サンプルです');
+    $(document).on("click", "#line-toroku, #insta-ok", function(){
+        alert('サンプルです');
     });
 
     // 結果コンテンツを更新
