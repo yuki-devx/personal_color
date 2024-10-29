@@ -756,13 +756,18 @@ document.addEventListener('DOMContentLoaded', () => {
         question.options.forEach((option, index) => {
             const button = document.createElement('button');
             button.className = 'option-button';
-            button.textContent = option.text;
+            button.textContent = option;
             button.addEventListener('click', () => {
-                selectAnswer(option.values);
-                button.classList.add('selected');
+                // クリック時に選択したボタンのスタイルを変更
+                button.style.background = getComputedStyle(document.documentElement).getPropertyValue('--primary-color');
+                button.style.color = 'white';
+                
+                // 少し遅延を入れて次の質問に進む前にスタイルをリセット
                 setTimeout(() => {
-                    button.classList.remove('selected');
-                }, 300);
+                    button.style.background = 'white';
+                    button.style.color = getComputedStyle(document.documentElement).getPropertyValue('--text-color');
+                    selectAnswer(question.values[index]);
+                }, 200);
             });
             optionsContainer.appendChild(button);
         });
