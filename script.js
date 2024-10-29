@@ -758,11 +758,6 @@ document.addEventListener('DOMContentLoaded', () => {
     button.className = 'option-button';
     button.textContent = option.text;
     button.addEventListener('click', () => {
-        // 全ての選択肢のスタイルをリセット
-        document.querySelectorAll('.option-button').forEach(btn => {
-            btn.style.removeProperty('background');
-            btn.style.removeProperty('color');
-        });
         selectAnswer(option.values);
     });
     optionsContainer.appendChild(button);
