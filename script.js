@@ -742,27 +742,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 質問の表示
     function showQuestion() {
-        const question = questions[currentQuestion];
+    const question = questions[currentQuestion];
     const questionElement = document.getElementById('question');
     const optionsContainer = document.querySelector('.options-container');
 
+    // フェードアウト
     questionElement.style.opacity = '0';
     optionsContainer.style.opacity = '0';
 
     setTimeout(() => {
         questionElement.textContent = question.question;
+        // 新しい選択肢を表示する前に、コンテナの中身を空にする（これによって自動的にスタイルもリセット）
         optionsContainer.innerHTML = '';
 
         question.options.forEach((option, index) => {
             const button = document.createElement('button');
-    button.className = 'option-button';
-    button.textContent = option.text;
-    button.addEventListener('click', () => {
-        selectAnswer(option.values);
-    });
-    optionsContainer.appendChild(button);
+            button.className = 'option-button';
+            button.textContent = option.text;
+            button.addEventListener('click', () => {
+                selectAnswer(option.values);
+            });
+            optionsContainer.appendChild(button);
         });
 
+        // フェードイン
         questionElement.style.opacity = '1';
         optionsContainer.style.opacity = '1';
     }, 300);
@@ -962,9 +965,9 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
 `;
 
-    $(document).on("click", "#line-toroku, #insta-ok", function(){
-        alert('サンプルです');
-    });
+    // $(document).on("click", "#line-toroku, #insta-ok", function(){
+    //     alert('サンプルです');
+    // });
 
     // 結果コンテンツを更新
     resultBox.innerHTML = headerHTML + paletteHTML + descriptionHTML;
