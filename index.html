@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>パーソナルカラー診断 2024</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="sparkles"></div>
+    <div class="container">
+        <!-- スタート画面 -->
+        <section id="start" class="screen active">
+            <div class="start-decoration">
+                <div class="floating-circle c1"></div>
+                <div class="floating-circle c2"></div>
+                <div class="floating-circle c3"></div>
+            </div>
+            <div class="content-wrapper">
+                <div class="title-container">
+                    <h1 class="main-title">
+                        <span class="title-emoji">✨</span>
+                        <span class="title-line">あなたの運命の</span>
+                        <span class="title-line accent">パーソナルカラー</span>
+                        <span class="title-line">診断</span>
+                        <span class="title-emoji">✨</span>
+                    </h1>
+                    <p class="subtitle">
+                        <span class="highlight">2万人</span>が診断！<br>
+                        たった<span class="highlight">10問</span>でわかる！
+                    </p>
+                </div>
+                <div class="button-container">
+                    <button id="startButton" class="primary-button">
+                        <span class="button-text">診断をはじめる</span>
+                        <span class="button-shine"></span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 質問画面 -->
+        <section id="quiz" class="screen">
+            <div class="progress-wrapper">
+                <div class="progress-text"></div>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="question-container">
+                <div class="question-decoration">
+                    <div class="floating-star s1">★</div>
+                    <div class="floating-star s2">⭐</div>
+                    <div class="floating-star s3">✨</div>
+                </div>
+                <h2 id="question" class="question"></h2>
+                <div class="options-container"></div>
+            </div>
+        </section>
+
+        <!-- 結果画面 -->
+        <section id="result" class="screen">
+            <div class="result-wrapper">
+                <div class="result-decoration">
+                    <div class="result-shine"></div>
+                </div>
+                <div class="result-content">
+                    <div class="result-header">
+                        <h2 class="result-heading">診断結果</h2>
+                        <div class="result-stars">
+                            <span class="star">✨</span>
+                            <span class="star">✨</span>
+                            <span class="star">✨</span>
+                        </div>
+                    </div>
+                    <div class="result-box">
+                        <h3 class="result-title">あなたのパーソナルカラーは...</h3>
+                        <div class="color-type-wrapper">
+                            <h3 id="colorType" class="color-type"></h3>
+                        </div>
+                        <div class="color-palette"></div>
+                        <div id="description" class="description"></div>
+                    </div>
+                    <div class="cta-container">
+                        <a href="#" class="cta-button line-button">
+                            <div class="button-inner">
+                                <span class="button-icon">📱</span>
+                                <span class="button-text">
+                                    <span class="text-main">LINE登録で詳しい解説をGET！</span>
+                                    <span class="text-sub">あなたに似合うコーディネートをお届け♪</span>
+                                </span>
+                            </div>
+                        </a>
+                        <a href="#" class="cta-button instagram-button">
+                            <div class="button-inner">
+                                <span class="button-icon">📸</span>
+                                <span class="button-text">
+                                    <span class="text-main">Instagramをフォロー</span>
+                                    <span class="text-sub">毎日更新！トレンドメイク＆コーデ</span>
+                                </span>
+                            </div>
+                        </a>
+                        <button id="restartButton" class="cta-button restart-button">
+                            <div class="button-inner">
+                                <span class="button-icon">🔄</span>
+                                <span class="button-text">
+                                    <span class="text-main">もう一度診断する</span>
+                                    <span class="text-sub">違う季節の自分を見つけよう！</span>
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
